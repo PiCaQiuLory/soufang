@@ -18,15 +18,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @SpringBootApplication
-@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class})
+@EnableAutoConfiguration
 @EnableJpaRepositories(basePackages = "com.lory.soufang.repository")
-@RestController
 public class SoufangApplication implements WebMvcConfigurer{
 
-	@GetMapping("/")
-	public String hello(){
-		return "hello, lory";
-	}
 
 	@Override
 	public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
